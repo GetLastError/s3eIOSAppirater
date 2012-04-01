@@ -1,0 +1,42 @@
+include:
+
+#include "s3eTypes.h"
+
+functions:
+
+//
+// Function: s3eIOSAppiraterParams
+// 
+//     Sets appirater params
+//
+// appId                - app id as appears in iTunes Connect
+// usesUntilPrompt      - How many times user have to use the app before prompting to rate
+// daysUntilPrompt       - How many days should pass since the user installed the app before prompting to rate
+// daysRemindLater      - How many days to wait before prompting again - in case user pressed "No Thanks"
+// nrSignificantEvents  - Number of significant events needed before prompting, set to -1 in order to ignore
+//
+//
+void s3eIOSAppiraterParams(int appId, int usesUntilPrompt, int daysUntilPrompt, int daysRemindLater, int nrSignificantEvents, const char * dlg_title, const char * dlg_text, const char * dlg_rate_button, const char * remind_dlg_title, const char * remind_dlg_text) void
+
+
+//
+// Function: s3eIOSAppiraterAppLaunched
+//
+//     Should be called at the end of the initialization code of your app
+//
+// canPromptForRating - if false, prompting is suppressed, can be turned on again
+//                      by calling it again with true, also, supressing is cancelled
+//                      if the other methods are called with canPromptForRating=true
+//                      see below
+//
+void s3eIOSAppiraterAppLaunched(bool canPromptForRating) void run_on_os_thread
+
+void s3eIOSAppiraterAppEnteredForeground(bool canPromptForRating) void run_on_os_thread
+
+void s3eIOSAppiraterUserDidSignificantEvent(bool canPromptForRating) void run_on_os_thread
+
+//
+// Explicitly show ask to rate
+//
+void s3eIOSAppiraterRateApp() void run_on_os_thread
+
