@@ -33,7 +33,7 @@ Changes made to the Appirater library -
 3.2.1 User pressed "No" -> "Would you like a reminder?" -> "Yes" | "No"
 
 Interface Functions:
-~~~~~~~~~~~~~~~~~~~~
+--------------------
 // Call this function on startup with your desired parameters,
 // nrSignificantEvents is optional and can be set to -1
 // See the use case below to better understand this function.
@@ -71,7 +71,7 @@ s3eIOSAppiraterAppEnteredForeground(bool canPromptForRating)
 s3eIOSAppiraterRateApp(void)
 
 Usage Example:
-~~~~~~~~~~~~~~
+--------------
 This is how I use this EDK extension in my game, Unstoppable Jake.
 At the end of init():
 
@@ -89,7 +89,7 @@ Whenever a user completes a level::
     }
 
 Explanation:
-~~~~~~~~~~~~
+------------
 1. I wanted the rate window to appear only when the user have finished a few 
    levels, so I called s3eIOSAppiraterAppLaunched() with canPromptForRating=false, 
    this causes Appirater to increase the use count but not to display the ask
@@ -103,11 +103,11 @@ Explanation:
     the completion of the 5th level)
 
 Screenshots:
-~~~~~~~~~~~~
+------------
 See screenshots of my game in the screenshots directory.
 
 Notes
-~~~~~
+-----
 1. The localized language files are not supported yet.
 2. Tracking of usage and user choices are saved per version of your 
    app and being completely removed in case your app was deleted.
